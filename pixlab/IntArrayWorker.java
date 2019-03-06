@@ -78,6 +78,19 @@ public class IntArrayWorker
     System.out.println();
   }
   
+  public int getCount(int n)
+  {
+      int count=0;
+      for (int[] row : matrix)
+        for (int pixel: row)
+        {
+            if (pixel==n)
+                count ++;
+        }
+    return count;
+  }
+  
+  
   
   /** 
    * fill the array with a pattern
