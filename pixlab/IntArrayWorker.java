@@ -90,6 +90,35 @@ public class IntArrayWorker
     return count;
   }
   
+  public int getLargest()
+  {
+      int largest = Integer.MIN_VALUE;
+      
+      for (int[] row : matrix)
+        for (int pixel: row)
+        {
+            if (pixel > largest)
+            {
+                largest = pixel;
+            }
+        }
+      return largest;
+  }
+  
+  
+  public int getColTotal(int col)
+  {
+      int total = 0;
+      
+      for(int[] row : matrix)
+      {
+          total += row[col];
+      }
+      
+      return total;
+        
+      
+  }
   
   
   /** 
