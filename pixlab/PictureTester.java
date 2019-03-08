@@ -63,6 +63,22 @@ public class PictureTester
       beach.explore();
   }
   
+  /** Method to test Negate */
+  public static void testNegate()
+  {
+      Picture beach = new Picture("beach.jpg");
+      
+      beach.Negate();
+      beach.explore();
+  }
+  
+  public static void testGrayscale()
+  {
+      Picture beach = new Picture("beach.jpg");
+      
+      //beach.Grayscale();
+      beach.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -75,7 +91,7 @@ public class PictureTester
     testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+    testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
