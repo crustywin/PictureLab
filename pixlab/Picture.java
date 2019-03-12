@@ -190,6 +190,56 @@ public class Picture extends SimplePicture
     } 
   }
   
+  public void MirrorHorizontal()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel topPixel = null;
+      Pixel bottomPixel = null;
+      int height = pixels.length;
+      for (int row = 0; row < height; row++)
+      {
+          for (int col = 0; col < pixels[0].length; col++)
+          {
+              topPixel = pixels[row][col];
+              bottomPixel = pixels[height - 1 - row][col];
+              bottomPixel.setColor(topPixel.getColor());
+          }
+      }
+  }
+  
+  public void MirrorHorizontalBotToTop()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel topPixel = null;
+      Pixel bottomPixel = null;
+      int height = pixels.length;
+      for (int row = 0; row < height; row++)
+      {
+          for (int col = 0; col < pixels[0].length; col++)
+          {
+              topPixel = pixels[row][col];
+              bottomPixel = pixels[height - 1 - row][col];
+              topPixel.setColor(bottomPixel.getColor());
+          }
+      }
+  }
+  
+  public void MirrorDiagonal()
+  {
+      Pixel[][] p = this.getPixels2D();
+      Pixel topPixel = null;
+      Pixel bottomPixel = null;
+      int end = p.length;
+      for (int i = 0; i < end; i++)
+      {
+          for (int j = 0; j < i; j++)
+          {
+              Pixel down = p[i][j];
+              Pixel up = p[j][i];
+              up.setColor(down.getColor());
+          }
+      }
+  }
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
@@ -205,13 +255,19 @@ public class Picture extends SimplePicture
       // loop from 13 to just before the mirror point
       for (int col = 13; col < mirrorPoint; col++)
       {
-        
+        count++;
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+    System.out.println(count);
+  }
+  
+  public void MirrorArms()
+  {
+      
   }
   
   /** copy from the passed fromPic to the
