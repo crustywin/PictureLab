@@ -75,6 +75,14 @@ public class PictureTester
       snowman.explore();
       
   }
+  
+  public static void testMirrorGull()
+  {
+      Picture seagull = new Picture("seagull.jpg");
+      seagull.explore();
+      seagull.MirrorGull();
+      seagull.explore();
+  }
  
   
   /** Method to test the collage method */
@@ -141,10 +149,10 @@ public class PictureTester
     //testMirrorHorizontal();
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorArms();
     //testMirrorGull();
    //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
