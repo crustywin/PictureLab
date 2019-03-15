@@ -129,6 +129,15 @@ public class PictureTester
       //beach.Grayscale();
       beach.explore();
   }
+  public static void testCopy()
+  {
+      Picture ocean = new Picture("beach.jpg");
+      Picture flower = new Picture("snowman.jpg");
+      //ocean.copy(flower,10,10,60,160,180,230);
+      ocean.explore();
+  }
+      
+  
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -152,8 +161,8 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
    //testMirrorDiagonal();
-    testCollage();
-    //testCopy();
+    //testCollage();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
